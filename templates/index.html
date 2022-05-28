@@ -1,0 +1,51 @@
+<!-- Student Mark Predictor App GUI -->
+
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>Student Mark Predictor ML App</title>
+      <link rel="stylesheet" type="text/css" href="{{ url_for('static',filename='styles/style.css') }}">
+
+</head>
+
+<body>
+
+
+  <div>
+    <img src="static/images/banner.png" class="w3-border w3-padding" alt="Marks Prediction System">
+  </div>
+
+ 
+ 
+ <div class="login">
+	
+    <!-- Form Get input to predict Marks-->
+    <center>
+    <form action="{{ url_for('predict')}}"method="post">
+        <h1>Enter Your Study Hours to Predict Marks</h1>
+        
+    	<input id="number" type="number" name="study_hours" placeholder="Study Hours" required="required" />
+    	<br>
+        
+        <br>
+        
+        <!-- Show button -->
+
+            <a target="_blank"><button type="submit"><strong>Predict Marks</strong></button></a>
+
+        
+    </form>
+    </center>
+   
+   <!-- Show predicted output using ML model --> 
+   <div>
+       <center>
+   <h2>{{ prediction_text }}</h2>
+       </center>
+   </div>
+
+ </div>
+
+</body>
+</html>
